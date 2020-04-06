@@ -41,6 +41,8 @@ workflows:
           filters:
             tags:
               only: /.*/
+            branches:
+              ignore: /.*/
       - hold:
           type: approval
           requires:
@@ -48,9 +50,13 @@ workflows:
           filters:
             tags:
               only: /.*/
+            branches:
+              ignore: /.*/
       - deploy:
           requires:
             - hold
           filters:
             tags:
               only: /.*/
+            branches:
+              ignore: /.*/
