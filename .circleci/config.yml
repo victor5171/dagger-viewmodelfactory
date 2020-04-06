@@ -38,6 +38,9 @@ workflows:
   build-and-deploy:
     jobs:
       - prepare
+          filters:
+            tags:
+              only: /.*/
       - hold:
           type: approval
           requires:
