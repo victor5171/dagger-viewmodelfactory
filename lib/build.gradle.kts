@@ -13,7 +13,7 @@ configure<PublishExtension> {
     groupId = "org.xtras.daggerviewmodelfactory"
     repoName = "xtras"
     artifactId = "dagger-viewmodelfactory"
-    publishVersion = "0.0.3"
+    publishVersion = System.getenv("CIRCLE_TAG")
     bintrayUser = "victor5171"
     bintrayKey = System.getenv("BINTRAY_KEY")
     desc = "A ViewModel Factory to be used along with Dagger2!"
