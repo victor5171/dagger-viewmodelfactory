@@ -1,5 +1,5 @@
-import org.jetbrains.kotlin.config.KotlinCompilerVersion
 import com.novoda.gradle.release.PublishExtension
+import org.jetbrains.kotlin.config.KotlinCompilerVersion
 
 plugins {
     id("com.android.library")
@@ -11,7 +11,7 @@ plugins {
 configure<PublishExtension> {
     userOrg = "victor5171"
     groupId = "org.xtras.daggerviewmodelfactory"
-    repoName = "dagger-viewmodelfactory"
+    repoName = "xtras"
     artifactId = "dagger-viewmodelfactory"
     publishVersion = "0.0.1"
     bintrayUser = "victor5171"
