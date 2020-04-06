@@ -28,7 +28,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: jars-{{ checksum "build.gradle.kts" }}-{{ checksum  "app/build.gradle.kts" }}
+          key: jars-{{ checksum "build.gradle.kts" }}-{{ checksum  "lib/build.gradle.kts" }}
       - run:
           name: Publish to Bintray
           command: ./gradlew build bintrayUpload -PdryRun=false
@@ -43,15 +43,15 @@ workflows:
           requires:
             - prepare
           filters:
-            tags:
-              only: /.*/
             branches:
-              only: master
+              only:
+                - master
+                - /release\/.*/ # all branches starting with release/
       - deploy:
           requires:
             - hold
           filters:
-            tags:
-              only: /.*/
             branches:
-              only: master
+              only:
+                - master
+                - /release\/.*/ # all branches starting with release/
