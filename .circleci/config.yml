@@ -46,13 +46,12 @@ workflows:
             tags:
               only: /.*/
             branches:
-              only:
-                - master
+              only: master
       - deploy:
           requires:
             - hold
           filters:
+            tags:
+              only: /.*/
             branches:
-              only:
-                - master
-                - /release\/.*/ # all branches starting with release/
+              only: master
