@@ -43,15 +43,11 @@ workflows:
           requires:
             - prepare
           filters:
-            branches:
-              only:
-                - master
-                - /release\/.*/ # all branches starting with release/
+            tags:
+              only: /.*/
       - deploy:
           requires:
             - hold
           filters:
-            branches:
-              only:
-                - master
-                - /release\/.*/ # all branches starting with release/
+            tags:
+              only: /.*/
