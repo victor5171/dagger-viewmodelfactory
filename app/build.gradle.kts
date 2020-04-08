@@ -38,7 +38,4 @@ dependencies {
     kapt("com.google.dagger:dagger-compiler:${properties["daggerVersion"]}")
 
     testImplementation("junit:junit:${properties["junit4Version"]}")
-
-    androidTestImplementation("androidx.test.ext:junit:${properties["junitExtVersion"]}")
-    androidTestImplementation("androidx.test.espresso:espresso-core:${properties["espressoVersion"]}")
 }

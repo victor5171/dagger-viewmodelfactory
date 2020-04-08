@@ -5,15 +5,22 @@ plugins {
     id("com.android.library")
     kotlin("android")
     kotlin("android.extensions")
+    kotlin("kapt")
     id("com.novoda.bintray-release")
 }
+
+kapt {
+    correctErrorTypes = true
+}
+
+val currentTag = System.getenv("CIRCLE_TAG") ?: "0.0.1"
 
 configure<PublishExtension> {
     userOrg = "victor5171"
     groupId = "org.xtras.daggerviewmodelfactory"
     repoName = "xtras"
     artifactId = "dagger-viewmodelfactory"
-    publishVersion = System.getenv("CIRCLE_TAG")
+    publishVersion = currentTag
     bintrayUser = "victor5171"
     bintrayKey = System.getenv("BINTRAY_KEY")
     desc = "A ViewModel Factory to be used along with Dagger2!"
@@ -42,6 +49,9 @@ android {
     }
 }
 
+//HARD-FIX: So the generated code can be recognized by the test source-set
+android.sourceSets["test"].java.srcDir(File("build/generated/source/kapt/debugUnitTest"))
+
 dependencies {
     implementation(kotlin("stdlib-jdk7", KotlinCompilerVersion.VERSION))
     implementation("androidx.appcompat:appcompat:${properties["appCompatVersion"]}")
@@ -49,7 +59,5 @@ dependencies {
     implementation("com.google.dagger:dagger:${properties["daggerVersion"]}")
 
     testImplementation("junit:junit:${properties["junit4Version"]}")
-
-    androidTestImplementation("androidx.test.ext:junit:${properties["junitExtVersion"]}")
-    androidTestImplementation("androidx.test.espresso:espresso-core:${properties["espressoVersion"]}")
+    kaptTest("com.google.dagger:dagger-compiler:${properties["daggerVersion"]}")
 }

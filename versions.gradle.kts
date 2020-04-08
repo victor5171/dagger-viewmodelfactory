@@ -5,7 +5,7 @@ with(extra) {
     set("minSdkVersion", 21)
     set("targetSdkVersion", 29)
     set("buildToolsVersion", "29.0.2")
-    set("gradleVersion", "3.6.1")
+    set("gradleVersion", "3.6.2")
     set("bintrayReleaseVersion", "0.9.2")
     set("ktlintVersion", "9.2.1")
 
@@ -17,6 +17,4 @@ with(extra) {
 
     // Testing
     set("junit4Version", "4.13")
-    set("junitExtVersion", "1.1.1")
-    set("espressoVersion", "3.2.0")
 }
