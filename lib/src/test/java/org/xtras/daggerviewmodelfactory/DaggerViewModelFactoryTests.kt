@@ -2,9 +2,9 @@ package org.xtras.daggerviewmodelfactory
 
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStore
+import javax.inject.Inject
 import org.junit.Assert
 import org.junit.Test
-import javax.inject.Inject
 
 class DaggerViewModelFactoryTests {
     @Test
