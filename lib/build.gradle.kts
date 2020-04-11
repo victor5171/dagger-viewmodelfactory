@@ -49,9 +49,6 @@ android {
     }
 }
 
-//HARD-FIX: So the generated code can be recognized by the test source-set
-android.sourceSets["test"].java.srcDir(File("build/generated/source/kapt/debugUnitTest"))
-
 dependencies {
     implementation(kotlin("stdlib-jdk7", KotlinCompilerVersion.VERSION))
     implementation("androidx.appcompat:appcompat:${properties["appCompatVersion"]}")

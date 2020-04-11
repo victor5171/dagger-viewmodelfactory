@@ -10,7 +10,7 @@ A library that provides an easy-to-use **ViewModelProvider.Factory** for project
     repositories { 
 	    maven { 
 		    url "https://dl.bintray.com/victor5171/xtras"
-		    }
+		}
     }
 
 2 - Add the library
