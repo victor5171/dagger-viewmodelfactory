@@ -1,8 +1,6 @@
 ﻿# ViewModelFactory
 A library that provides an easy-to-use **ViewModelProvider.Factory** for projects that use **Dagger2**!
 
-[![CircleCI](https://circleci.com/gh/victor5171/dagger-viewmodelfactory/tree/master.svg?style=shield)](https://circleci.com/gh/victor5171/dagger-viewmodelfactory/tree/master)
-
 [ ![Download](https://api.bintray.com/packages/victor5171/xtras/dagger-viewmodelfactory/images/download.svg) ](https://bintray.com/victor5171/xtras/dagger-viewmodelfactory/_latestVersion)
 
 ## How to get it
